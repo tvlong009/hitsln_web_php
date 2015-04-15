@@ -192,7 +192,7 @@ class LanguagesController extends BackendController {
             ]);
         }
         $source_messages = SourceMessage::find()->all();
-        if (empty($messages) && empty($source_messages)) {
+        if (empty($source_messages)) {
             Yii::$app->session->setFlash('error', 'Please define message in db');
             return $this->render('languagesetting', [
                         'model' => $model,
@@ -200,8 +200,8 @@ class LanguagesController extends BackendController {
         }
         return $this->render('languagesetting', array(
                     'model' => $model,
-                     'language_array'=>$language_array
-            ));
+                    'language_array' => $language_array
+        ));
     }
 
     public function actionSavelangmessages() {
@@ -211,34 +211,30 @@ class LanguagesController extends BackendController {
             $messages_id = Yii::$app->request->post('messages_id');
             $langcode = Yii::$app->request->post('langcode');
             if (!empty($messages) && !empty($messages_id)) {
-                for ($i = 0; $i < count($messages_id); $i++) {
-                    $model_message = new Message();
-                    $model_message = Message::findOne(['id' => $messages_id[$i], 'language' => $langcode]);
-                    if (!empty($model_message)) {
-                        $model_message->translation = $messages[$i];
-                        if ($model_message->save()) {
-                            $data['success'] = 1;
-                            $data['notification'] = 'Messages save successfully';
-                        } else {
-                            $data['error'] = 0;
-                            $data['notification'] = 'Messages save false';
-                        }
-                    } else {
-
-                        for ($i = 0; $i < count($messages_id); $i++) {
+                $flag = TRUE;
+                foreach ($messages_id as $i => $msg) {
+                    if (!empty($messages[$i])) {
+                        $model_message = new Message();
+                        $model_message = Message::findOne(['id' => $msg, 'language' => $langcode]);
+                        if (empty($model_message)) {
                             $model_message = new Message();
-                            $model_message->id = $messages_id[$i];
+                            $model_message->id = $msg;
                             $model_message->language = $langcode;
-                            $model_message->translation = $messages[$i];
-                            if ($model_message->save()) {
-                                $data['success'] = 1;
-                                $data['notification'] = 'Messages save successfully';
-                            } else {
-                                $data['error'] = 0;
-                                $data['notification'] = 'Messages save false';
-                            }
+                        } else if ($model_message->translation == $messages[$i]) {
+                            continue;
+                        }
+                        $model_message->translation = $messages[$i];
+                        if (!$model_message->save()) {
+                            $flag = FALSE;
                         }
                     }
+                }
+                if ($flag) {
+                    $data['success'] = 1;
+                    $data['notification'] = 'Messages save successfully';
+                } else {
+                    $data['error'] = 0;
+                    $data['notification'] = 'Has some messages cannot save';
                 }
             } else {
                 $data['error'] = 0;
@@ -253,33 +249,24 @@ class LanguagesController extends BackendController {
     }
 
     public function actionDisplaylanguage() {
+        $lang = Yii::$app->request->post('langcode');
+        $messages = array();
+        $source_messages = SourceMessage::find()->all();
+        if (empty($source_messages)) {
+            Yii::$app->session->setFlash('error', 'Please define source message');
+            return $this->render('languagesetting');
+        }
+        foreach ($source_messages as $src_msg) {
+            if (!empty($src_msg->message))
+                $messages[$src_msg->id] = Message::findOne(array('language' => $lang, 'id' => $src_msg->id));
+        }
         if (Yii::$app->request->isAjax) {
-
-            $lang = Yii::$app->request->post('langcode');
-            $messages = Message::findAll(['language' => $lang]);
-            $source_messages = SourceMessage::find()->all();
-            if (empty($source_messages)) {
-                Yii::$app->session->setFlash('error', 'Please define source message');
-                return $this->render('languagesetting', [
-                            'model' => $model,
-                ]);
-            }
-            if (empty($messages)) {
-
-                for ($i = 0; $i < count($source_messages); $i++) {
-                    $model_message = new Message();
-                    $model_message->id = $source_messages[$i]->id;
-                    $model_message->language = $lang;
-                    $model_message->translation = '';
-                    if ($model_message->save()) {
-                        
-                    } else {
-                        Yii::$app->session->setFlash('error', 'Cannot save message');
-                    }
-                }
-            }
-
             return $this->renderPartial('_message_list', array(
+                        'messages' => $messages,
+                        'lang' => $lang,
+                        'source_messages' => $source_messages));
+        } else {
+            return $this->render('_message_list', array(
                         'messages' => $messages,
                         'lang' => $lang,
                         'source_messages' => $source_messages));

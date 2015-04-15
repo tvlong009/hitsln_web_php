@@ -67,3 +67,7 @@ $form = ActiveForm::begin([
     </div>                    
 </div>
 <?php ActiveForm::end(); ?>
+<script type="text/javascript">
+    var url = "<?php echo Yii::$app->urlManager->createAbsoluteUrl('/languages') ?>";
+    var root_url = "<?php echo Yii::$app->urlManager->baseUrl; ?>";
+</script>

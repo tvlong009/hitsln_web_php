@@ -8,7 +8,6 @@
 $this->title = Yii::t('app', 'Translate Languages');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Languages'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
-
 ?>
 <?php
 if (Yii::$app->session->hasFlash('success')) {
@@ -36,9 +35,14 @@ if (Yii::$app->session->hasFlash('error')) {
         <div class="form-group col-md-12">
             <h2><?php echo Yii::t('app', 'Choose language'); ?></h2>
             <select class="form-control language_seleted">
-                <?php foreach ($language_array as $language) { ?>
-                    <option value= '<?php echo $language->code; ?>'><?php echo $language->name; ?></option>
-                <?php } ?>
+                <?php
+                if (!empty($language_array)) {
+                    foreach ($language_array as $language) {
+                        ?>
+                        <option value= '<?php echo $language->code; ?>'><?php echo $language->name; ?></option>
+                    <?php }
+                }
+                ?>
             </select>
         </div>
         <div class="form-group col-md-12">
@@ -54,5 +58,5 @@ if (Yii::$app->session->hasFlash('error')) {
 </div>
 <script type="text/javascript">
     var url = "<?php echo Yii::$app->urlManager->createAbsoluteUrl('/languages') ?>";
-        var root_url = "<?php echo Yii::$app->urlManager->baseUrl; ?>";
+    var root_url = "<?php echo Yii::$app->urlManager->baseUrl; ?>";
 </script>
