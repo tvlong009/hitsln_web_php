@@ -20,7 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
 
 ?>
 <?= $this->render('_form', [
-        'loginSetting' => $loginSetting,		
+        'loginSettings' => $loginSettings,
 ]) ?>
             </div>
         </div>           

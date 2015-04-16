@@ -31,7 +31,7 @@ class LoginSetting extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['key_name', 'value', 'displayorder', 'created', 'modified'], 'required'],
+            [['key_name'], 'required'],
             [['value'], 'string'],
             [['displayorder'], 'integer'],
             [['created', 'modified'], 'safe'],
@@ -67,5 +67,16 @@ class LoginSetting extends \yii\db\ActiveRecord
             'created' => Yii::t('app', 'Created'),
             'modified' => Yii::t('app', 'Modified'),
         ];
+    }
+
+    public function beforeSave($insert)
+    {
+        if ($this->isNewRecord) {
+            $maxOrder = (int)$this->find()->max('displayorder') + 1;
+
+            $this->displayorder = $maxOrder;
+        }
+
+        return parent::beforeSave($insert);
     }
 }
