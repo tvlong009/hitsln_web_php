@@ -20,12 +20,12 @@ $form = ActiveForm::begin([
             'id' => 'my-form',
             'options' => ['class' => 'form-horizontal'],
         ]);
-    echo Html::hiddenInput('id', $model['page_id'], ['id' => 'page_id']);
+    echo Html::hiddenInput('id', $model['page_id'], ['id' => 'page_id']);    
     echo Html::hiddenInput('Page[publish_date]', $model['publish_date'], ['id' => 'publishdate']);
 ?>
 <div class="col-md-6">
     <?php
-    echo $form->field($model, 'page_key')->textInput(['placeholder' => 'Name']);
+    echo $form->field($model, 'page_key')->textInput(['placeholder' => 'Name']);   
     echo $form->field($model, 'parent_id')->dropDownList(ArrayHelper::map(Page::find()->all(), 'page_id', 'page_key'), ['prompt' => 'No parent selected']);
     ?>
     <div class="form-group">

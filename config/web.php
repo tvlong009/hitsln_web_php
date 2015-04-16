@@ -60,6 +60,9 @@ $config = [
         'redactor' => 'yii\redactor\RedactorModule',
         'cmsparticles' => [
             'class' => 'app\modules\cmsparticles\particle',
+        ], 
+        'loginwidget' => [
+            'class' => 'app\modules\loginwidget\login',
         ],
     ],
 ];

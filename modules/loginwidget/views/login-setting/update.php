@@ -1,4 +1,4 @@
-<?php app\assets\UserPropertyAsset::register($this) ?>
+<?php app\assets\LoginWidgetSettingAsset::register($this) ?>
 
 <!-- ============================================ -->
 <!-- start: PAGE CONTENT -->
@@ -7,21 +7,20 @@
         <div class="panel panel-default">
             <div class="panel-heading">
                 <i class="fa fa-external-link-square"></i>
-                <?=Yii::t('app','Create user property')?>
+                <?=Yii::t('app','Update login setting')?>
             </div>
             <div class="panel-body">
                 <?php
 /* @var $this yii\web\View */
 /* @var $model app\models\Languages */
 
-$this->title = Yii::t('app','Update user property');
-$this->params['breadcrumbs'][] = ['label' => Yii::t('app','User property'), 'url' => ['index']];
+$this->title = Yii::t('app','Update login setting');
+$this->params['breadcrumbs'][] = ['label' => Yii::t('app','Login setting'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 
 ?>
 <?= $this->render('_form', [
-        'model' => $model,
-		'userpropertygroupList' => $userpropertygroupList
+        'loginSettings' => $loginSettings,
 ]) ?>
             </div>
         </div>           
@@ -30,3 +29,4 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 <!-- end: PAGE CONTENT-->
 <!-- ============================================ -->
+
