@@ -82,3 +82,23 @@ body {
 
 
 /*Endlogin page*/
+
+/*Custom textbox has error <-- Sunny edit*/
+.box_otherpage .form-group  .input-group-lg input,
+.box_otherpage .form-group  .input-group-lg span{
+    border-radius: 0px !important;
+}
+
+.box_otherpage .form-group.has-success span,
+.box_otherpage .form-group.has-error span{
+    background: #0056f9;
+    color: #fff;
+    border : 1px solid #fff;
+    
+}
+
+.box_otherpage .form-group p.help-block-error {
+    color: red;
+}
+
+/*END->Custom textbox has error <-- Sunny edit*/
