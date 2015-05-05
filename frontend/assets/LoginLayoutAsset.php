@@ -14,7 +14,7 @@ use yii\web\AssetBundle;
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @since 2.0
  */
-class MainLayoutAsset extends AssetBundle
+class LoginLayoutAsset extends AssetBundle
 {
     public $basePath = '@webroot';
     public $baseUrl = '@web';
@@ -23,27 +23,18 @@ class MainLayoutAsset extends AssetBundle
         'css/font-awesome.css',
         'css/tm-font.css',
         'css/entypo.css',
-        'css/metisMenu.min.css',
-        'css/support.css',
         'css/general.css',
         'css/style.css',
+        'css/otherpage.css'
     ];
     public $js = [
         'js/less.min.js',
         'js/jquery-1.9.1.js',
         'js/bootstrap.js',
-        'js/metisMenu.min.js',
-        'js/support.js',
-        'js/myjs.js',
-        'js/home.js'
-        
-        
+        'js/myjs.js'      
     ];
     public $depends = [
         'yii\web\YiiAsset',
         'yii\bootstrap\BootstrapAsset',
-    ];
-    public $publishOptions = [
-        'forceCopy' => true,
     ];
 }
