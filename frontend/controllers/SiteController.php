@@ -11,7 +11,7 @@ use frontend\models\ContactForm;
 
 class SiteController extends Controller
 {
-    
+
     public function actions()
     {
         return [
@@ -39,7 +39,7 @@ class SiteController extends Controller
             return $this->refresh();
         } else {
             return $this->render('contact', [
-                'model' => $model,
+                        'model' => $model,
             ]);
         }
     }
@@ -49,17 +49,26 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
-    public function actionSay($message = 'Hello'){
+    public function actionSay($message = 'Hello')
+    {
         return $this->render('say', ['message' => $message]);
     }
 
-    public function actionEntry(){
+    public function actionEntry()
+    {
         $model = new EntryForm;
 
-        if($model->load(Yii::$app->request->post()) && $model->validate()){
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             return $this->render('entry-confirm', ['model' => $model]);
         } else {
             return $this->render('entry', ['model' => $model]);
         }
     }
+
+    public function actionLogin()
+    {
+        $this->layout = 'login';
+        return $this->render('login');
+    }
+
 }
