@@ -5,6 +5,8 @@ jQuery(document).ready(function($) {
 
 	setWidth_Banner_Content();
 	//call a function
+    
+    custom_active_first_slide_item();
 
 	$('.menu_right_click').hide();
 	$('.menu_right_click').mouseleave(function(event) {
@@ -261,8 +263,12 @@ function setWidth_Banner_Content()
 // End function Set with for banner content
 
 
-
-
+function custom_active_first_slide_item()
+{
+   $('.banner_content .slide .item:first-child').addClass('active');
+ 
+}
+//end function insert class active to first slide show on top page.
 
 
 //================ END:LIST FUNCTION  ================

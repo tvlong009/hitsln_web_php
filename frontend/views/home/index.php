@@ -5,25 +5,28 @@
         <div class="row top_bar_content" >
 
             <!-- ==========    Top Banner COntent ==========    -->	
-            <div class="col-lg-10">
-                <div class="banner_content">
-                    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+            
+            <?php echo \backend\modules\slidewidget\widgets\SlideWidget::widget(['name'=>'Slide_1','template'=>'
+                {{begin slide}}
+                <div class="col-lg-10">
+                        <div class="banner_content">
+                        		<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
 
+								  <div class="carousel-inner" role="listbox">
+                                  {{begin item}}
+								 
+								    <div class="item">
+								    	 <img src="{{image}}" alt="">
+								    </div>	
+                                  {{end item}}
+								  </div>							
 
-                        <!-- Wrapper for slides -->
-                        <div class="carousel-inner" role="listbox">
-                            <div class="item active">
-                                <img src="img/banner/1.jpg" alt="">
-                            </div>
-                            <div class="item">
-                                <img src="img/banner/1.jpg" alt="">
-                            </div>								    
-                        </div>							
-
+								</div>
+								
+                        </div>
                     </div>
-                    <!-- End slide -->
-                </div>
-            </div>
+                    {{end slide}}']); ?>
+          
             <!-- End left column -->
 
             <div class="col-lg-2 position_relative">
@@ -104,8 +107,9 @@
                         </div>
 
                     </div>
-
                     <!-- Start TOP TRACK -->
+                    <?php echo \backend\modules\slidewidget\widgets\SlideWidget::widget(['name'=>'Slide_1','template'=>' 
+                    {{begin slide}}
                     <div id="toptrack" class="col-md-12 row_item">
                         <div class="row title_row_item">
                             <i class="fa fa-play"></i>
@@ -117,152 +121,38 @@
                         </div>
 
                         <div class="row item_list">
-
-                            <!-- Start item -->
+                            {{begin item}}
                             <div class="col-md-2 item">
                                 <div class="img_item right_click">                  		<div class="mark_item">
                                         <i class="fa fa-play"></i>
                                     </div>			
-                                    <img src="img/item/1.jpg" alt="">
+                                    <img src="{{image}}" alt="">
 
                                 </div>
                                 <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
+                                    <h4><a href="#">{{title}}</a></h3>
+                                        <p>{{description}}</p>
                                 </div> 
                                 <div>&nbsp;</div>               						
                             </div>
-                            <!-- End a item -->
-
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		<div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/2.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		<div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/3.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		<div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/4.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		<div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/5.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		<div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/6.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		<div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/7.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		<div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/8.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-
+                            {{end item}}
                         </div>
                     </div>
-                    <!-- End a row list item Top Track -->
+                    {{end slide}}
+                    ']);?>
+                    <!--End a row list item Top Track-->  
 
 
 
 
 
                     <!-- Start TOP ALBUMS -->
+                          <?php echo \backend\modules\slidewidget\widgets\SlideWidget::widget(['name'=>'Slide_1','template'=>' 
+                    {{begin slide}}
                     <div id="topalbums" class="col-md-12 row_item">
                         <div class="row title_row_item">
-                            <i class="fa fa-list-ul"></i>
-                            TOP ALBUMS
+                            <i class="fa fa-play"></i>
+                            TOP TRACKS
                             <div class="arrow_item pull-right">
                                 <i data-itemnumber="0" class="fa fa-angle-left btn_prev_item"></i>
                                 <i data-itemnumber="0" class="fa fa-angle-right btn_next_item"></i>
@@ -270,151 +160,37 @@
                         </div>
 
                         <div class="row item_list">
-
-                            <!-- Start item -->
+                            {{begin item}}
                             <div class="col-md-2 item">
                                 <div class="img_item right_click">                  		<div class="mark_item">
                                         <i class="fa fa-play"></i>
                                     </div>			
-                                    <img src="img/item/8.jpg" alt="">
+                                    <img src="{{image}}" alt="">
 
                                 </div>
                                 <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
+                                       <h4><a href="#">{{title}}</a></h3>
+                                        <p>{{description}}</p>
                                 </div> 
                                 <div>&nbsp;</div>               						
                             </div>
-                            <!-- End a item -->
-
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		<div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/7.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		
-                                    <div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/6.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		<div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/5.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		<div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/4.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		<div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/3.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		<div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/2.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		<div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/1.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-
+                            {{end item}}
                         </div>
                     </div>
+                    {{end slide}}
+                    ']);?>
                     <!-- End a row list item TOP ALBUMS -->
 
 
 
                     <!-- Start HITSNL TOP 30 -->
+                    
+                    <?php echo \backend\modules\slidewidget\widgets\SlideWidget::widget(['name'=>'Slide_1','template'=>' 
+                    {{begin slide}}
                     <div id="hitsnl_top30" class="col-md-12 row_item">
                         <div class="row title_row_item">
-                            <i class="fa fa-list-ol"></i>
-                            HITSNL TOP 30
+                            <i class="fa fa-play"></i>
+                            TOP TRACKS
                             <div class="arrow_item pull-right">
                                 <i data-itemnumber="0" class="fa fa-angle-left btn_prev_item"></i>
                                 <i data-itemnumber="0" class="fa fa-angle-right btn_next_item"></i>
@@ -422,150 +198,36 @@
                         </div>
 
                         <div class="row item_list">
-
-                            <!-- Start item -->
+                            {{begin item}}
                             <div class="col-md-2 item">
                                 <div class="img_item right_click">                  		<div class="mark_item">
                                         <i class="fa fa-play"></i>
                                     </div>			
-                                    <img src="img/item/2.jpg" alt="">
+                                    <img src="{{image}}" alt="">
 
                                 </div>
                                 <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
+                                        <h4><a href="#">{{title}}</a></h3>
+                                        <p>{{description}}</p>
                                 </div> 
                                 <div>&nbsp;</div>               						
                             </div>
-                            <!-- End a item -->
-
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		<div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/7.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		<div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/6.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		<div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/5.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		<div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/4.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		<div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/3.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		<div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/2.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		<div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/1.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-
+                            {{end item}}
                         </div>
                     </div>
+                    {{end slide}}
+                    ']);?>
                     <!-- End a row list item HITSNL TOP 30 -->
 
 
 
                     <!-- Start NEWS DISCOVER -->
+                         <?php echo \backend\modules\slidewidget\widgets\SlideWidget::widget(['name'=>'Slide_1','template'=>' 
+                    {{begin slide}}
                     <div id="news_discover" class="col-md-12 row_item">
                         <div class="row title_row_item">
-                            <i class="fa fa-newspaper-o"></i>
-                            NEWS DISCOVER
+                            <i class="fa fa-play"></i>
+                            TOP TRACKS
                             <div class="arrow_item pull-right">
                                 <i data-itemnumber="0" class="fa fa-angle-left btn_prev_item"></i>
                                 <i data-itemnumber="0" class="fa fa-angle-right btn_next_item"></i>
@@ -573,141 +235,25 @@
                         </div>
 
                         <div class="row item_list">
-
-                            <!-- Start item -->
+                            {{begin item}}
                             <div class="col-md-2 item">
                                 <div class="img_item right_click">                  		<div class="mark_item">
                                         <i class="fa fa-play"></i>
                                     </div>			
-                                    <img src="img/item/2.jpg" alt="">
+                                    <img src="{{image}}" alt="">
 
                                 </div>
                                 <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
+                                        <h4><a href="#">{{title}}</a></h3>
+                                        <p>{{description}}</p>
                                 </div> 
                                 <div>&nbsp;</div>               						
                             </div>
-                            <!-- End a item -->
-
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		<div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/7.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		<div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/6.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		<div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/5.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		<div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/4.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		<div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/3.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		<div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/2.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-                            <!-- Start item -->
-                            <div class="col-md-2 item">
-                                <div class="img_item right_click">                  		<div class="mark_item">
-                                        <i class="fa fa-play"></i>
-                                    </div>			
-                                    <img src="img/item/1.jpg" alt="">
-
-                                </div>
-                                <div>
-                                    <h4><a href="#">Lorem ipsum dolor sit</a></h3>
-                                        <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat</p>
-                                </div> 
-                                <div>&nbsp;</div>               						
-                            </div>
-                            <!-- End a item -->
-
-
+                            {{end item}}
                         </div>
                     </div>
+                    {{end slide}}
+                    ']);?>
                     <!-- End a row list item NEWS DISCOVER -->
 
 
