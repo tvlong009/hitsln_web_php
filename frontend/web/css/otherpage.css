@@ -88,7 +88,10 @@ body {
 .box_otherpage .form-group  .input-group-lg span{
     border-radius: 0px !important;
 }
-
+.box_otherpage .form-group.has-success  .input-group-lg input {
+    border: 1px solid #fff;
+    border-left: none;
+}
 .box_otherpage .form-group.has-success span,
 .box_otherpage .form-group.has-error span{
     background: #0056f9;
