@@ -44,6 +44,11 @@ use yii\bootstrap\ActiveForm;
                                 <i class="fa fa-remove-sign"></i> <?php echo Yii::$app->session->getFlash('error') ?>
                             </div>
                         <?php } ?>
+                        <?php if (Yii::$app->session->hasFlash('success')) { ?>
+                            <div class="errorHandler alert alert-success">
+                                <i class="fa fa-remove-sign"></i> <?php echo Yii::$app->session->getFlash('success') ?>
+                            </div>
+                        <?php } ?>
 
                         <?php
                         $form = ActiveForm::begin([

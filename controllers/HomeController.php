@@ -118,5 +118,14 @@ class HomeController extends FrontendController
         $this->layout = 'login_frontend';
         return $this->render('login');
     }
+    /**
+     * @author Jimmy
+     * @todo register
+     */
+    public function actionRegister()
+    {
+        $this->layout = 'login_frontend';
+        return $this->render('register');
+    }
 
 }
