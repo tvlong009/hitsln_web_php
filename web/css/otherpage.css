@@ -82,3 +82,11 @@ body {
 
 
 /*Endlogin page*/
+
+/*Custom textbox orther page*/
+form .input-group .form-control ,
+form .input-group .input-group-addon {
+    border-radius: 0px;
+}
+
+/*END --> Custom textbox orther page*/

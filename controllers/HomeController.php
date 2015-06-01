@@ -109,5 +109,14 @@ class HomeController extends FrontendController
             readfile($file_path);
         }
     }
+    /**
+     * @author Jimmy
+     * @todo login
+     */
+    public function actionLogin()
+    {
+        $this->layout = 'login_frontend';
+        return $this->render('login');
+    }
 
 }
