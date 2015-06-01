@@ -176,7 +176,7 @@ FrontendAsset::register($this);
                         <!-- /.nav-second-level -->
                     </li>
 
-                    <li   class="active">
+                    <li  class="active">
 
                         <a  href="#">
                             <i class="fa fa-heart-o icon_parent"></i>
@@ -234,10 +234,122 @@ FrontendAsset::register($this);
         </div>
     </div>
     <div id="page-wrapper">
+        <div class="container-fluid">
+            <div class="row top_bar_content" >
+
+                <!-- ==========    Top Banner COntent ==========    -->
+                <div class="col-lg-10">
+                    <div class="banner_content">
+                        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+
+
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner" role="listbox">
+                                <div class="item active">
+<!--                                    <img src="img/banner/1.jpg" alt="">-->
+                                    <?php echo Html::img('@web/img/banner/1.jpg') ?>
+                                </div>
+                                <div class="item">
+<!--                                    <img src="img/banner/1.jpg" alt="">-->
+                                    <?php echo Html::img('@web/img/banner/1.jpg') ?>
+                                </div>
+                            </div>
+
+                        </div>
+                        <!-- End slide -->
+                    </div>
+                </div>
+                <!-- End left column -->
+
+                <div class="col-lg-2 position_relative">
+                    <div class="menu_right_bar_absolute">
+                        <ul class="nav" id="right-menu">
+                            <li>
+                                <a href="myaccount.html">
+                                    <i class="fa fa-home icon_parent"></i> My Account </a>
+                            </li>
+
+                            <li>
+                                <a href="myaccount.html">
+                                    <i class="fa fa-paper-plane icon_parent"></i> Promotion </a>
+                            </li>
+
+                            <li>
+                                <a href="myaccount.html">
+                                    <i class="fa fa-gear icon_parent"></i> Settings </a>
+                            </li>
+
+                            <li>
+                                <a href="myaccount.html">
+                                    <i class="fa fa-bullhorn icon_parent"></i> Radio </a>
+                            </li>
+
+                            <li>
+                                <a href="#">
+                                    <i class="fa fa-ellipsis-h  icon_parent"></i> More
+                                    <span class="fa arrow"></span>
+                                </a>
+
+                                <ul class="nav nav-second-level">
+                                    <li>
+                                        <a href="album.html">
+                                            <i class="fa fa-ellipsis-h icon_child"></i>
+                                            Album
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="buttons.html">
+                                            <i class="icon-users icon_child"></i>
+                                            Artiesten</a>
+                                    </li>
+                                </ul>
+                                <!-- /.nav-second-level -->
+                            </li>
+
+                        </ul>
+                    </div>
+                </div>
+                <!-- End right column -->
+
+                <div class="col-lg-12 main_content_page"> <!--start content -->
+                    <?php echo $content ?>
+                </div><!--end content -->
+            </div>
+        </div>
     </div>
     <!-- /.Setting player -->
     <!-- ===================== Page Content =====================-->
 </div>
+<!-- Menu of item -->
+<div class="menu_right_click">
+    <div class="line_3_color">&nbsp;</div>
+    <ul class="list-group">
+        <li class="list-group-item"><a href="#">Play</a></li>
+        <li class="list-group-item menu_right_click_child">
+            <a href="#">Add to Playlisten</a>
+            <i class="fa fa-angle-right pull-right"></i>
+            <ul class="list-group">
+                <li class="list-group-item"><a href="#">Play</a></li>
+                <li class="list-group-item"><a href="#">Add to Playlisten</a></li>
+                <li class="list-group-item"><a href="#">Add to Favorieten</a></li>
+                <li class="list-group-item"><a href="#">Share</a></li>
+            </ul>
+        </li>
+        <li class="list-group-item menu_right_click_child">
+            <i class="fa fa-angle-right pull-right"></i>
+            <a href="#">Add to Favorieten</a>
+            <ul class="list-group">
+                <li class="list-group-item"><a href="#">Play</a></li>
+                <li class="list-group-item"><a href="#">Add to Playlisten</a></li>
+                <li class="list-group-item"><a href="#">Add to Favorieten</a></li>
+                <li class="list-group-item"><a href="#">Share</a></li>
+            </ul>
+        </li>
+        <li class="list-group-item"><a href="#">Share</a></li>
+    </ul>
+</div>
+
+<!-- END:Menu of item -->
 <?php $this->endBody() ?>
     </body>
 </html>

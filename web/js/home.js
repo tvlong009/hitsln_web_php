@@ -6,19 +6,17 @@
 
 
 
+jQuery(document).ready(function($) {
+    slide_item ("#toptrack", "");
+    slide_item ("#topalbums", "");
+    slide_item ("#hitsnl_top30", "");
+    slide_item ("#news_discover", "");
+    //Set slide
 
-jQuery(document).ready(function () {
-var revapi;
-    revapi = jQuery('.tp-banner').revolution(
-            {
-                delay: 9000,
-                startwidth: 1170,
-                startheight: 600,
-                hideThumbs: 10,
-                fullWidth: "on",
-                forceFullWidth: "on"
-            });
 
-});	//ready
+    filter_item(".filter_item");
+    // set filer
+});
+
 
 
