@@ -10,7 +10,7 @@ namespace app\modules\loginwidget\widgets;
 
 use yii\base\Widget;
 use app\modules\loginwidget\models\LoginSetting;
-use app\models\AppLoginForm;
+use app\models\LoginForm;
 use Yii;
 
 class LoginWidget extends Widget
