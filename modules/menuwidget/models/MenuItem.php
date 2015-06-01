@@ -25,7 +25,7 @@ use Yii;
  */
 class MenuItem extends \yii\db\ActiveRecord
 {
-  
+  public $is_ajax;
   /**
      * @inheritdoc
      */
