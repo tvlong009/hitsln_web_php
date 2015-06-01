@@ -1,9 +1,0 @@
-<?php
-
-return [
-    'class' => 'yii\db\Connection',
-    'dsn' => 'mysql:host=mysql.vietnamcubator.com;dbname=tmucms',
-    'username' => 'tmucms',
-    'password' => 'OTUzMjYzNTkx',
-    'charset' => 'utf8',
-];
