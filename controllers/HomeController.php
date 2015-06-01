@@ -115,7 +115,7 @@ class HomeController extends FrontendController
      */
     public function actionLogin()
     {
-        $this->layout = 'login';
+        $this->layout = 'login_frontend';
         return $this->render('login');
     }
 
