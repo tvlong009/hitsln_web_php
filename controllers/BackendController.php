@@ -6,9 +6,7 @@ use app\models\Languages;
 use Yii;
 use yii\web\Controller;
 use yii\filters\AccessControl;
-use app\models\User;
-use app\models\Roles;
-use app\models\UsersRoles;
+
 
 class BackendController extends Controller {
 
@@ -18,45 +16,6 @@ class BackendController extends Controller {
     public function __construct($id, $module) {
         //just for test
         parent::__construct($id, $module);
-
-        $user = User::find();
-
-        if ($user->count() == 0) {
-
-            //create account to test
-            $user = new User();
-            $user->username = 'admin';
-            $user->name = 'Administrator';
-            $user->password = sha1('123456');
-            $user->email = 'admin@targetmediamusic.com';
-            $user->auth_key = \Yii::$app->security->generateRandomKey();
-            $user->created_at = time();
-            $user->updated_at = time();
-
-            $user->save();
-        } else {
-            $user = Yii::$app->user;
-        }
-
-        $roleMaster = Roles::findOne(['is_master' => 1]);
-        if (!$roleMaster) {
-            $roleMaster = new Roles();
-            $roleMaster->name = 'master';
-            $roleMaster->level = 20;
-            $roleMaster->is_master = 1;
-            $roleMaster->is_default = 0;
-
-            $roleMaster->save();
-        }
-
-        $roleUser = UsersRoles::findOne(['user_id' => $user->id, 'role_id' => $roleMaster->id]);
-        if (!$roleUser) {
-            $roleUser = new UsersRoles();
-            $roleUser->user_id = $user->id;
-            $roleUser->role_id = $roleMaster->id;
-
-            $roleUser->save();
-        }
 
         if (!Yii::$app->session->has('app_language')) {
             $language = Languages::findOne(['is_default' => 1]);
