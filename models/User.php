@@ -24,7 +24,7 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
 {
     public  $re_password;
     public static function tableName() {
-        return 'tmucms.user';
+        return 'user';
     }
 
     /**
