@@ -22,7 +22,7 @@ use Yii;
  */
 class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
 {
-    public  $re_password;
+    public  $password_repeat;
     public static function tableName() {
         return 'user';
     }
@@ -33,11 +33,13 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
     public function rules()
     {
         return [
-            [['username', 'name', 'auth_key', 'password', 'email', 'created_at', 'updated_at'], 'required'],
+            [['username', 'name', 'auth_key', 'password', 'password_repeat', 'email'], 'required'],
+            [['password_repeat'], 'compare', 'compareAttribute' => 'password'],
             [['status', 'created_at', 'updated_at', 'require_change_password'], 'integer'],
             [['username', 'name', 'password', 'password_reset_token', 'email'], 'string', 'max' => 255],
             [['auth_key'], 'string', 'max' => 32],
             [['email'], 'email'],
+            [['username', 'email'], 'unique'],
 
             [['avatar'], 'file','extensions' => 'csv, jpg, jpeg', ],
             [['avatar'], 'file', 'maxFiles' => 10],
@@ -62,7 +64,7 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
             'updated_at' => Yii::t('app','Updated At'),
             'require_change_password' => Yii::t('app','Require Change Password'),
             'avatar'=>Yii::t('app','Your avatar'),
-            're_password'=> Yii::t('app','Repeat Password'),
+            'password_repeat'=> Yii::t('app','Repeat Password'),
         ];
     }
 
@@ -170,6 +172,11 @@ class User extends \yii\db\ActiveRecord implements \yii\web\IdentityInterface
      */
     public function removePasswordResetToken () {
         $this->password_reset_token = null;
+    }
+    public function beforeSave($insert)
+    {
+        $this->password = sha1($this->password);
+        return parent::beforeSave($insert);
     }
 
 }

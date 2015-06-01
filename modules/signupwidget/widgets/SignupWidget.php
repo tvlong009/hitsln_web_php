@@ -3,7 +3,7 @@
 namespace app\modules\signupwidget\widgets;
 
 use app\models\Roles;
-use app\models\site\User;
+use app\models\User;
 use app\models\UsersRoles;
 use app\modules\signupwidget\models\SignupSetting;
 use yii\base\Widget;
@@ -48,18 +48,14 @@ class SignupWidget extends Widget
     public function run()
     {
         $model = new User();
-
-        if ($model->load(Yii::$app->request->post())) {
-
+        
+        if ($model->load(Yii::$app->request->post()) && $model->validate()) {
             $model->require_change_password = $this->requireChangePassword ? 1 : 0;
 
             if ($this->requireChangePassword) {
                 $this->randomString = Yii::$app->security->generateRandomString(6);
-                $model->password = sha1($this->randomString);
-            } else {
-                $model->password = sha1($model->password);
-                $model->re_password = sha1($model->re_password);
-            }
+                $model->password = $this->randomString;
+            } 
 
             $model->gender = (int)Yii::$app->request->post('gender');
             $model->birth_date = date('Y-m-d', mktime(
@@ -70,7 +66,7 @@ class SignupWidget extends Widget
                 Yii::$app->request->post('dd'),
                 Yii::$app->request->post('yy')
             ));
-
+            $model->name = $model->username;
             if ($model->save()) {
                 $userRole = new UsersRoles();
                 $userRole->user_id = $model->id;
@@ -82,12 +78,12 @@ class SignupWidget extends Widget
                     $model->save();
 
                     $this->sendMail($model);
-
-
-                    Yii::$app->session->setFlash('success', Yii::t('app', 'Sign up successfully'));
                 }
+                // if login unsuccess show message signup success
+                Yii::$app->session->setFlash('success', Yii::t('app', 'Sign up successfully'));
+                return Yii::$app->controller->redirect(Yii::$app->urlManager->createAbsoluteUrl('/home/login'));
             } else {
-                Yii::$app->session->setFlash('error', Yii::t('app', 'Information is not valid.'));
+                Yii::$app->session->setFlash('error', Yii::t('app', 'Sign up unsuccess, please try again.'));
             }
         }
 

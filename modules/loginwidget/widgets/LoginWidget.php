@@ -49,7 +49,7 @@ class LoginWidget extends Widget
 
             $model = new LoginForm();
             if ($model->load(Yii::$app->request->post())) {
-
+                var_dump($model);die;
                 if ($model->login()) {
                     if (Yii::$app->request->referrer) {
                         return Yii::$app->controller->redirect(Yii::$app->request->referrer);
