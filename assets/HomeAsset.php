@@ -21,19 +21,23 @@ class HomeAsset extends AssetBundle
     public $css = [
         'css/bootstrap-theme.css',
         'css/font-awesome.css',
-        'css/mycss.css',
-        'css/myreponsive.css',
+        'css/entypo.css',
         'css/tm-font.css',
-        'css/settingslide.css'
+        'css/metisMenu.min.css',
+        'css/support.css',
+        'css/sumoselect.css',
+        'css/otherpage.css',
+        'css/general.css',
+        'css/style.css'
         
     ];
     public $js = [
         'js/jquery-1.9.1.js',
-        'js/jquery.themepunch.plugins.min.js',
-        'js/jquery.themepunch.revolution.min.js',
         'js/bootstrap.js',
-        'js/slide-show-about.js',
-        'js/home.js'
+        'js/home.js',
+        'js/metisMenu.min.js',
+        'js/support.js',
+        'js/myjs.js'
     ];
     public $depends = [
         'yii\web\YiiAsset',
