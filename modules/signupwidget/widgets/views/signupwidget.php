@@ -122,7 +122,7 @@ use yii\bootstrap\ActiveForm;
                         echo $form->field($model, 'name', ['template' => '
                         <div class="input-group input-group-lg">
 						  <span class="input-group-addon" id="basic-addon1">
-						 	 <i class="fa fa-user"></i>
+						 	 <i class="icon-user"></i>
 						  </span>
 						  {input}
 						  </div>
