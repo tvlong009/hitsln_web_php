@@ -11,14 +11,15 @@ class m150601_040006_create_user_role_default extends Migration
     public function up()
     {
         $user = User::find();
-
+        
         if ($user->count() == 0) {
 
             //create account to test
             $user = new User();
             $user->username = 'admin';
             $user->name = 'Administrator';
-            $user->password = sha1('123456');
+            $user->password = '123456';
+            $user->password_repeat = '123456';
             $user->email = 'admin@targetmediamusic.com';
             $user->auth_key = \Yii::$app->security->generateRandomKey();
             $user->created_at = time();
